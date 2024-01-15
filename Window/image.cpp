@@ -1,13 +1,11 @@
 #include "image.hpp"
 
 namespace winLib {
-	// I'm sorry
 	void GDI_PLUS_IMAGE_LOADER::gdi_plus_startup() noexcept {
 		const Gdiplus::GdiplusStartupInput startupInput;
 		GdiplusStartup(&token, &startupInput, nullptr);
 	}
 
-	// I'm sorry
 	void GDI_PLUS_IMAGE_LOADER::gdi_plus_shutdown() noexcept {
 		Gdiplus::GdiplusShutdown(token);
 	}

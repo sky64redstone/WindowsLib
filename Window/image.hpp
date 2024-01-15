@@ -31,15 +31,11 @@
 	#undef max
 
 	namespace winLib {
-		//I'm sorry
 		class GDI_PLUS_IMAGE_LOADER {
 		public:
-			// I'm sorry
 			ULONG_PTR token;
 
-			// I'm sorry
 			void gdi_plus_startup() noexcept;
-			// I'm sorry
 			void gdi_plus_shutdown() noexcept;
 		};
 

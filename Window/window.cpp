@@ -86,7 +86,6 @@ namespace winLib {
 
         device_context_handle = GetDC(window_handle);
 
-        // I'm sorry
         gdi_plus_image_loader.gdi_plus_startup();
 
         LARGE_INTEGER cpu_frequency;
@@ -138,7 +137,6 @@ namespace winLib {
         if (onTerminate)
             onTerminate(this);
 
-        // I'm sorry
         gdi_plus_image_loader.gdi_plus_shutdown();
     }
 

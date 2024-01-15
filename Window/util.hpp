@@ -9,6 +9,7 @@
 	#include <filesystem>
 	#include <string>
 	#include <cmath>
+	#include <shlobj.h>
 
 	#if defined(UNICODE) || defined(_UNICODE)
 		#define Txt(s) L##s

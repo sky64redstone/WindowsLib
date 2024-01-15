@@ -3,7 +3,10 @@
 winLib::Image img(1, 1);
 
 static void init(winLib::Window* wnd) {
-	std::string filePath = "C:\\Users\\jonat\\Pictures\\Windows Wallpaper\\1893692.jpg";
+	// choose a path for a image
+	char mypicturespath[MAX_PATH];
+	HRESULT result = SHGetFolderPathA(NULL, CSIDL_MYPICTURES, NULL, SHGFP_TYPE_CURRENT, mypicturespath);
+	std::string filePath = std::string(mypicturespath) + "\\Windows Wallpaper\\1893692.jpg";
 
 	img.load_image_file(filePath);
 

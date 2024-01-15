@@ -27,7 +27,6 @@
 		public:
 			static LRESULT __stdcall window_callback(HWND window_handle, _In_ UINT message, _In_ WPARAM wparam, _In_ LPARAM lparam) noexcept;
 
-			// I'm sorry
 			GDI_PLUS_IMAGE_LOADER gdi_plus_image_loader;
 
 			RenderState state;
