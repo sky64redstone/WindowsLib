@@ -16,7 +16,7 @@
 			int listen_state();
 			SOCKET accept_client();
 			int send_data(char* data, int length) override;
-			int recive_data(char* buffer, int length = DEFAULT_BUFLEN) override;
+			int receive_data(char* buffer, int length = DEFAULT_BUFLEN) override;
 			bool stop() override;
 			bool disconnect() override;
 		};

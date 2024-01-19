@@ -22,6 +22,9 @@ namespace winLib {
 
 	int ClientSocket::connect_socket() {
 
+		if (result == nullptr)
+			std::cout << "(connect)result is nullptr";
+
 		for (ptr = result; ptr != nullptr; ptr = ptr->ai_next) {
 
 			sock = socket(ptr->ai_family, ptr->ai_socktype, ptr->ai_protocol);
@@ -45,7 +48,9 @@ namespace winLib {
 
 		if (sock == INVALID_SOCKET) {
 			std::cout << "\nERROR: unable to connect to server!\n";
-			return WSAGetLastError();;
+			const int err = WSAGetLastError();
+			// return -1 if the result variable was a nullptr -> err == 0
+			return err == 0 ? -1 : err;
 		}
 
 		return 0;
@@ -62,7 +67,7 @@ namespace winLib {
 		return bytes_sent;
 	}
 
-	int ClientSocket::recive_data(char* buffer, int length) {
+	int ClientSocket::receive_data(char* buffer, int length) {
 		int bytes_recv;
 
 		if ((bytes_recv = recv(sock, buffer, length, 0)) == SOCKET_ERROR) {

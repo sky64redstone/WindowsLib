@@ -78,7 +78,7 @@ namespace winLib {
 		return bytes_sent;
 	}
 
-	int ServerSocket::recive_data(char* buffer, int length) {
+	int ServerSocket::receive_data(char* buffer, int length) {
 		int bytes_recv;
 
 		if ((bytes_recv = recv(sock, buffer, length, 0)) == SOCKET_ERROR) {

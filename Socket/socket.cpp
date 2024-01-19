@@ -7,9 +7,6 @@ namespace winLib {
 
 		if (const int error = initialize_winsock())
 			throw std::system_error(error, std::system_category());
-
-		if (const int error = create_socket())
-			throw std::system_error(error, std::system_category());
 	}
 
 	Socket::~Socket() {

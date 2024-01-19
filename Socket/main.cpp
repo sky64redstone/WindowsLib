@@ -9,6 +9,9 @@
 int main() {
 	winLib::ClientSocket client("www.google.com");
 
+	std::cout << "\ncreating...\n";
+	if (const int r = client.create_socket())
+		return r;
 	std::cout << "\nconnectinging...\n";
 	if (const int r = client.connect_socket())
 		return r;
