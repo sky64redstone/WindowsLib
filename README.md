@@ -10,4 +10,4 @@ Gdiplus is used to load images. (only for now, later I write a loader by myself)
 Uses the <WinSock2.h> and <ws2tcpip.h> header files to interact with the SOCKET objects!
 
 ## Sound
-Uses the <mmsystem.h> and <Windows.h> header files to play Sound-Files
+Uses the <mmsystem.h> and <Windows.h> header files to handle Soundinput and -output!
