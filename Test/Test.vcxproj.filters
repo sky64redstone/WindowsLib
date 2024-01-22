@@ -15,33 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="window.hpp">
-      <Filter>Headerdateien</Filter>
-    </ClInclude>
-    <ClInclude Include="image.hpp">
-      <Filter>Headerdateien</Filter>
-    </ClInclude>
-    <ClInclude Include="input.hpp">
-      <Filter>Headerdateien</Filter>
-    </ClInclude>
-    <ClInclude Include="util.hpp">
-      <Filter>Headerdateien</Filter>
-    </ClInclude>
-    <ClInclude Include="vector2.hpp">
-      <Filter>Headerdateien</Filter>
-    </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="image.cpp">
-      <Filter>Quelldateien</Filter>
-    </ClCompile>
-    <ClCompile Include="input.cpp">
-      <Filter>Quelldateien</Filter>
-    </ClCompile>
-    <ClCompile Include="util.cpp">
-      <Filter>Quelldateien</Filter>
-    </ClCompile>
-    <ClCompile Include="window.cpp">
+    <ClCompile Include="main.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
   </ItemGroup>

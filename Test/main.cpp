@@ -1,4 +1,5 @@
-#include "window.hpp"
+#define WINDOWS_WINDOW_INCLUDE_CPP
+#include <window.hpp>
 
 winLib::Image img(1, 1);
 

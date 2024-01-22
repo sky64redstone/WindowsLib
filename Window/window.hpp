@@ -1,3 +1,4 @@
+#pragma once
 #ifndef WINDOWS_WINDOW_WINDOW_HPP
 	#define WINDOWS_WINDOW_WINDOW_HPP
 
@@ -97,5 +98,12 @@
 			short getMouseWheelDelta() const noexcept;
 		};
 	}
+
+	#ifdef WINDOWS_WINDOW_INCLUDE_CPP
+		#include <image.cpp>
+		#include <window.cpp>
+		#include <util.cpp>
+		#include <input.cpp>
+	#endif
 
 #endif
