@@ -1,8 +1,6 @@
-#include <windows.h>
-#include <mmsystem.h>
 #include <iostream>
 
-#pragma comment(lib, "winmm.lib")
+#include "sound.hpp"
 
 int main() {
 

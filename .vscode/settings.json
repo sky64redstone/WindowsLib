@@ -1,0 +1,8 @@
+{
+    "files.associations": {
+        "*.fsh": "glsl",
+        "*.amogus": "json",
+        "iosfwd": "cpp",
+        "xlocbuf": "cpp"
+    }
+}
