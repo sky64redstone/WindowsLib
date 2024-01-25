@@ -66,12 +66,13 @@
 
 			void setTitle(const std::string title);
 			std::string getTitle();
-			int getWidth();
-			int getHeight();
+			int getWidth() const noexcept;
+			int getHeight() const noexcept;
 			
 			// render methods
 
 			void setAlphaMode(AlphaMode mode) noexcept;
+			void setBlendFactor(float factor) noexcept;
 
 			void clearScreen(unsigned int color_code = 0xFF000000) const noexcept;
 			bool draw(unsigned int x, unsigned int y, unsigned int color_code = 0xFFFFFFFF) const noexcept;

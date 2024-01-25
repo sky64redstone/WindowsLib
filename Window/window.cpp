@@ -204,16 +204,20 @@ namespace winLib {
         return "";
     }
 
-    int Window::getWidth() {
+    int Window::getWidth() const noexcept {
         return state.width;
     }
 
-    int Window::getHeight() {
+    int Window::getHeight() const noexcept {
         return state.height;
     }
 
     void Window::setAlphaMode(AlphaMode mode) noexcept {
         this->mode = mode;
+    }
+
+    void Window::setBlendFactor(float factor) noexcept {
+        this->blendFactor = factor;
     }
 
     void Window::clearScreen(unsigned int color_code) const noexcept {
