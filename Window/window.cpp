@@ -204,6 +204,14 @@ namespace winLib {
         return "";
     }
 
+    int Window::getWidth() {
+        return state.width;
+    }
+
+    int Window::getHeight() {
+        return state.height;
+    }
+
     void Window::setAlphaMode(AlphaMode mode) noexcept {
         this->mode = mode;
     }

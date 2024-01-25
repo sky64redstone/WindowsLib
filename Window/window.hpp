@@ -66,6 +66,8 @@
 
 			void setTitle(const std::string title);
 			std::string getTitle();
+			int getWidth();
+			int getHeight();
 			
 			// render methods
 
