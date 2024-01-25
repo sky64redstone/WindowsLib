@@ -39,8 +39,8 @@
 
 	#define getAlphaColorValue(color_code) ((color_code & 0xFF000000) >> 24)
 	#define getRedColorValue(color_code)   ((color_code & 0x00FF0000) >> 16)
-	#define getGreenColorValue(color_code) ((color_code & 0x0000FF00) >> 8)
-	#define getBlueColorValue(color_code)   (color_code & 0x000000FF)
+	#define getGreenColorValue(color_code) ((color_code & 0x0000FF00) >> 8 )
+	#define getBlueColorValue(color_code)  ((color_code & 0x000000FF)      )
 
 	// parameters in unsigned char [0;255]
 	#define rgbColorCode(red, green, blue) (static_cast<unsigned int>(static_cast<unsigned char>(red) | (static_cast<unsigned char>(green) << 8) | (static_cast<unsigned char>(blue) << 16)))

@@ -24,6 +24,12 @@
 			FAN
 		};
 
+		enum AlphaMode {
+			NONE,
+			MASK,
+			ALPHA
+		};
+
 		class Window {
 		public:
 			static LRESULT __stdcall window_callback(HWND window_handle, _In_ UINT message, _In_ WPARAM wparam, _In_ LPARAM lparam) noexcept;
@@ -31,6 +37,7 @@
 			GDI_PLUS_IMAGE_LOADER gdi_plus_image_loader;
 
 			RenderState state;
+			AlphaMode mode;
 
 			KeyBoard keyboard;
 			Mouse	 mouse;
@@ -43,6 +50,7 @@
 			void (*onUpdate)(Window* window, float delta);
 			void (*onTerminate)(Window* window);
 
+			float blendFactor;
 			float minDelta;
 
 			bool running;
@@ -60,6 +68,8 @@
 			std::string getTitle();
 			
 			// render methods
+
+			void setAlphaMode(AlphaMode mode) noexcept;
 
 			void clearScreen(unsigned int color_code = 0xFF000000) const noexcept;
 			bool draw(unsigned int x, unsigned int y, unsigned int color_code = 0xFFFFFFFF) const noexcept;

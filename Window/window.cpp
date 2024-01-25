@@ -28,13 +28,15 @@ namespace winLib {
         window_handle = nullptr;
         device_context_handle = nullptr;
         gdi_plus_image_loader = {};
-        minDelta = 0;
+        minDelta = 0.f;
         onInitalise = nullptr;
         onUpdate = nullptr;
         onTerminate = nullptr;
         running = false;
         keyboard = {};
         mouse = {};
+        blendFactor = 1.f;
+        mode = AlphaMode::NONE;
     }
 
     void Window::create(int width, int height, DWORD window_style, HINSTANCE instance, NATIV_CURSOR cursor) noexcept {
@@ -202,6 +204,10 @@ namespace winLib {
         return "";
     }
 
+    void Window::setAlphaMode(AlphaMode mode) noexcept {
+        this->mode = mode;
+    }
+
     void Window::clearScreen(unsigned int color_code) const noexcept {
         unsigned int* pixel = state.memory;
 
@@ -221,7 +227,20 @@ namespace winLib {
 
         unsigned int* pixel = state.memory + x + y * state.width;
 
-        *pixel = color_code;
+        if (mode == AlphaMode::NONE || ((color_code & 0xFF000000) == 0xFF000000 && mode == AlphaMode::MASK)) {
+            *pixel = color_code;
+        } else if (mode == AlphaMode::ALPHA) {
+            float a = getAlphaColorValue(color_code);
+            float d = static_cast<float>(a / 255.f) * blendFactor;
+            float c = 1.f - d;
+
+            *pixel = rgbaColorCode(
+                d * static_cast<float>(getRedColorValue(color_code)) + c * static_cast<float>(getRedColorValue(*pixel)),
+                d * static_cast<float>(getGreenColorValue(color_code)) + c * static_cast<float>(getGreenColorValue(*pixel)),
+                d * static_cast<float>(getBlueColorValue(color_code)) + c * static_cast<float>(getBlueColorValue(*pixel)),
+                a * blendFactor
+            );
+        }
 
         return true;
     }
